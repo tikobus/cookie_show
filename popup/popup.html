@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="topbar">
+    <img id="favicon" class="favicon" alt="" hidden>
+    <div class="site-info">
+      <div id="host" class="host" title="">—</div>
+      <div id="count" class="count">正在加载…</div>
+    </div>
+    <button id="refresh" class="icon-btn" title="刷新 Cookie 列表" aria-label="刷新">&#8635;</button>
+  </header>
+
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="搜索名称 / 值 / 域…" autocomplete="off">
+    <button id="copyHeader" class="btn" title="以 k=v; k=v 形式复制全部 Cookie">&#9114; 复制 Header</button>
+    <div class="export-wrap">
+      <button id="exportBtn" class="btn primary" aria-haspopup="true" aria-expanded="false">&#8681; 导出</button>
+      <div id="exportMenu" class="menu" role="menu" hidden>
+        <button class="menu-item" role="menuitem" data-action="json-file">
+          <span class="menu-title">下载 JSON 文件</span>
+          <span class="menu-desc">完整属性，便于程序处理</span>
+        </button>
+        <button class="menu-item" role="menuitem" data-action="netscape-file">
+          <span class="menu-title">下载 cookies.txt</span>
+          <span class="menu-desc">Netscape 格式，兼容 curl / wget / yt-dlp</span>
+        </button>
+        <div class="menu-sep" role="separator"></div>
+        <button class="menu-item" role="menuitem" data-action="json-copy">
+          <span class="menu-title">复制 JSON</span>
+          <span class="menu-desc">复制到剪贴板</span>
+        </button>
+        <button class="menu-item" role="menuitem" data-action="curl-copy">
+          <span class="menu-title">复制 cURL 命令</span>
+          <span class="menu-desc">带 Cookie 头的 curl 请求</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <main id="list" class="list"></main>
+
+  <div id="empty" class="empty" hidden>
+    <div class="empty-icon">&#127850;</div>
+    <div id="emptyText" class="empty-text">未发现 Cookie</div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
