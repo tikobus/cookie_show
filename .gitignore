@@ -1,0 +1,5 @@
+.amo-upload-uuid
+.DS_Store
+/dist
+sign.sh
+/web-ext-artifacts

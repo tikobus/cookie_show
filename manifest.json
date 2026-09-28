@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Cookie Viewer & Exporter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "查看当前页面的全部 Cookie，并导出为 JSON、Netscape cookies.txt、Header 串或 cURL 命令。",
   "icons": {
     "48": "icons/icon.svg",
@@ -27,7 +27,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "cookie-viewer@cookie.show",
-      "strict_min_version": "115.0"
+      "strict_min_version": "115.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   }
 }
